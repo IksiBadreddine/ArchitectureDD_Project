@@ -1,7 +1,7 @@
 """
-Scraper pour Espacevoiture.com - Version corrigée
-Extraction correcte de la marque et du modèle
-Exécution: uv run python scraper_espacevoiture_corrected.py
+Scraper pour Espacevoiture.com - Version finale
+Correction de l'erreur NoneType + sauvegarde progressive
+Exécution: uv run python scraper_espacevoiture_final.py
 """
 
 import requests
@@ -13,10 +13,12 @@ import random
 from datetime import datetime
 from typing import List, Dict, Optional
 from urllib.parse import urljoin
+import os
 
 print("="*70)
-print("🚗 SCRAPER ESPACEVOITURE.COM - VERSION CORRIGÉE")
-print("📡 Extraction correcte de la marque et du modèle")
+print("🚗 SCRAPER ESPACEVOITURE.COM - VERSION FINALE")
+print("📡 Correction erreur NoneType + sauvegarde progressive")
+print("   Appuyez sur Ctrl+C pour arrêter proprement")
 print("="*70)
 
 class EspaceVoitureScraper:
@@ -28,13 +30,19 @@ class EspaceVoitureScraper:
             'Accept-Language': 'fr,fr-FR;q=0.8,en;q=0.5',
         })
         self.base_url = "https://www.espacevoiture.com"
+        self.toutes_annonces = []
+        self.filename = None
     
     def clean_price(self, text: str) -> Optional[int]:
+        """Nettoie le prix - retourne None si pas de prix"""
         if not text:
             return None
         match = re.search(r'(\d[\d\s]*\d?)', text)
         if match:
-            return int(match.group(1).replace(' ', ''))
+            try:
+                return int(match.group(1).replace(' ', ''))
+            except:
+                return None
         return None
     
     def clean_number(self, text: str) -> Optional[int]:
@@ -42,8 +50,31 @@ class EspaceVoitureScraper:
             return None
         match = re.search(r'(\d[\d\s]*\d?)', text)
         if match:
-            return int(match.group(1).replace(' ', ''))
+            try:
+                return int(match.group(1).replace(' ', ''))
+            except:
+                return None
         return None
+    
+    def save_checkpoint(self):
+        """Sauvegarde immédiate des données collectées"""
+        if self.toutes_annonces:
+            if not self.filename:
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                self.filename = f"espacevoiture_final_{timestamp}.csv"
+            
+            df = pd.DataFrame(self.toutes_annonces)
+            df.to_csv(self.filename, index=False, encoding="utf-8-sig")
+            print(f"\n   💾 CHECKPOINT: {len(self.toutes_annonces)} annonces sauvegardées")
+    
+    def safe_format_price(self, prix):
+        """Sécurise l'affichage du prix"""
+        if prix is None:
+            return "Prix non dispo"
+        try:
+            return f"{prix:,} DH"
+        except:
+            return "Prix invalide"
     
     def get_ad_details(self, url: str, listing_data: Dict = None) -> Dict:
         """Récupère les détails complets d'une annonce"""
@@ -60,11 +91,10 @@ class EspaceVoitureScraper:
                 'source': 'espacevoiture.com'
             }
             
-            # ✅ CORRECTION 1: Titre depuis le lien ou depuis la page
+            # Titre
             if listing_data and listing_data.get('titre'):
                 titre_complet = listing_data['titre']
             else:
-                # Alternative: chercher dans le breadcrumb ou le titre
                 breadcrumb = soup.select('.breadcrumb a, .fil_ariane a')
                 if breadcrumb and len(breadcrumb) >= 2:
                     titre_complet = f"{breadcrumb[-2].text} {breadcrumb[-1].text}"
@@ -74,9 +104,8 @@ class EspaceVoitureScraper:
             
             details['titre'] = titre_complet
             
-            # ✅ CORRECTION 2: Extraction marque et modèle depuis le titre
+            # Marque et modèle
             if titre_complet:
-                # Nettoyer le titre (enlever les parties indésirables)
                 titre_clean = re.sub(r' - .*$', '', titre_complet)
                 titre_clean = re.sub(r' \| .*$', '', titre_clean)
                 mots = titre_clean.split()
@@ -88,13 +117,14 @@ class EspaceVoitureScraper:
                     details['marque'] = mots[0]
                     details['modele'] = None
             
-            # ✅ CORRECTION 3: Prix depuis plusieurs sources
+            # Prix
             price_elem = (soup.select_one('.prix') or 
                          soup.select_one('#rightContainer dd[style*="color:#F00"]') or
                          soup.select_one('.price'))
             if price_elem:
                 details['prix'] = self.clean_price(price_elem.get_text(strip=True))
-            elif listing_data and listing_data.get('prix'):
+            
+            if not details.get('prix') and listing_data and listing_data.get('prix'):
                 details['prix'] = listing_data['prix']
             
             # Date de l'annonce
@@ -110,14 +140,14 @@ class EspaceVoitureScraper:
             if ville_elem:
                 details['ville'] = ville_elem.get_text(strip=True)
             
-            # Année et kilométrage depuis listing si non trouvés
+            # Infos du listing
             if listing_data:
                 if listing_data.get('annee') and not details.get('annee'):
                     details['annee'] = listing_data['annee']
                 if listing_data.get('kilometrage') and not details.get('kilometrage'):
                     details['kilometrage'] = listing_data['kilometrage']
             
-            # Extraction des caractéristiques
+            # Caractéristiques
             right_container = soup.select_one('#rightContainer')
             if right_container:
                 for dl in right_container.select('dl'):
@@ -148,7 +178,7 @@ class EspaceVoitureScraper:
             print(f"      ❌ Erreur détail: {e}")
             return {}
     
-    def scrape_listing_page(self, page_num: int = 1) -> List[Dict]:
+    def scrape_listing_page(self, page_num: int = 1, get_details: bool = True) -> List[Dict]:
         """Scrape une page de listing"""
         if page_num == 1:
             url = "https://www.espacevoiture.com/voitures.html"
@@ -164,8 +194,6 @@ class EspaceVoitureScraper:
                 return []
             
             soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Trouver toutes les lignes d'annonces
             rows = soup.select('#resultContainer tr')
             
             annonces_page = []
@@ -174,7 +202,6 @@ class EspaceVoitureScraper:
                 if not prix_elem:
                     continue
                 
-                # Extraire le modèle/lien
                 modele_elem = row.select_one('p.descriptif a')
                 annee_elem = row.select_one('.annee')
                 km_elem = row.select_one('.km')
@@ -184,9 +211,16 @@ class EspaceVoitureScraper:
                     lien = modele_elem.get('href')
                     full_url = urljoin(self.base_url, lien) if lien else None
                     
+                    prix = self.clean_price(prix_elem.get_text(strip=True))
+                    
+                    # Ignorer les annonces sans prix (comme "Appeler pour le prix")
+                    if prix is None:
+                        print(f"   ⏭️ Ignoré: {titre[:35]} (pas de prix)")
+                        continue
+                    
                     annonce = {
                         'titre': titre,
-                        'prix': self.clean_price(prix_elem.get_text(strip=True)),
+                        'prix': prix,
                         'annee': self.clean_number(annee_elem.get_text(strip=True)) if annee_elem else None,
                         'kilometrage': self.clean_number(km_elem.get_text(strip=True)) if km_elem else None,
                         'url': full_url,
@@ -194,8 +228,21 @@ class EspaceVoitureScraper:
                         'date_scraping': datetime.now().isoformat()
                     }
                     
+                    # Récupération des détails
+                    if get_details and full_url:
+                        print(f"   → Détails: {titre[:35]}...")
+                        details = self.get_ad_details(full_url, listing_data=annonce)
+                        if details:
+                            annonce.update(details)
+                            prix_aff = self.safe_format_price(annonce.get('prix'))
+                            print(f"      ✅ Marque: {details.get('marque', 'N/A')} | Prix: {prix_aff}")
+                        else:
+                            print(f"      ⚠️ Pas de détails")
+                        time.sleep(random.uniform(0.5, 1))
+                    
                     annonces_page.append(annonce)
-                    print(f"   ✅ {titre[:35]} - {annonce['prix']:,} DH")
+                    prix_aff = self.safe_format_price(annonce['prix'])
+                    print(f"   ✅ {titre[:35]} - {prix_aff}")
             
             print(f"   → {len(annonces_page)} annonces sur cette page")
             return annonces_page
@@ -204,33 +251,42 @@ class EspaceVoitureScraper:
             print(f"   ❌ Erreur: {e}")
             return []
     
-    def scrape_all_pages(self, max_pages: int = 5, get_details: bool = True) -> List[Dict]:
-        """Scrape plusieurs pages"""
+    def scrape_all_pages(self, max_pages: int = 310, get_details: bool = True, save_every: int = 10) -> List[Dict]:
+        """Scrape plusieurs pages avec sauvegarde progressive"""
         toutes_annonces = []
         
         if max_pages > 904:
             max_pages = 904
         
-        print(f"\n🎯 Scraping de {max_pages} pages")
+        print(f"\n🎯 Scraping de {max_pages} pages maximum")
+        print(f"💾 Sauvegarde automatique toutes les {save_every} pages")
         
         for page in range(1, max_pages + 1):
-            annonces_page = self.scrape_listing_page(page)
+            print(f"\n{'='*50}")
+            print(f"🔄 PAGE {page}/{max_pages}")
             
-            if get_details:
-                for i, annonce in enumerate(annonces_page):
-                    if annonce.get('url'):
-                        print(f"\n   [{i+1}/{len(annonces_page)}] Détails: {annonce['titre']}...")
-                        details = self.get_ad_details(annonce['url'], listing_data=annonce)
-                        if details:
-                            annonce.update(details)
-                            print(f"      ✅ Marque: {details.get('marque', 'N/A')} | Modèle: {details.get('modele', 'N/A')} | Ville: {details.get('ville', 'N/A')}")
-                        time.sleep(random.uniform(0.5, 1))
+            annonces_page = self.scrape_listing_page(page, get_details=get_details)
             
-            toutes_annonces.extend(annonces_page)
+            if annonces_page:
+                toutes_annonces.extend(annonces_page)
+                self.toutes_annonces = toutes_annonces
+                print(f"\n   📊 Total actuel: {len(toutes_annonces)} annonces")
+                
+                # Sauvegarde toutes les X pages
+                if page % save_every == 0:
+                    self.save_checkpoint()
+            else:
+                print(f"\n   ⚠️ Aucune annonce sur cette page")
+                # Continue quand même (la page peut être vide mais la suivante non)
             
+            # Sauvegarde à la dernière page
+            if page == max_pages:
+                self.save_checkpoint()
+            
+            # Pause entre les pages
             if page < max_pages:
                 delay = random.uniform(1, 2)
-                print(f"\n   ⏳ Pause de {delay:.1f}s...")
+                print(f"\n   ⏳ Pause de {delay:.1f}s avant page suivante...")
                 time.sleep(delay)
         
         return toutes_annonces
@@ -242,42 +298,56 @@ if __name__ == "__main__":
     scraper = EspaceVoitureScraper()
     
     print("\n📡 Démarrage du scraping...")
+    print("⚠️  Appuyez sur Ctrl+C pour arrêter proprement\n")
     
-    # Configuration
-    NB_PAGES =       # Commencer avec 3 pages pour tester
-    GET_DETAILS = True
+    # ========== CONFIGURATION ==========
+    NB_PAGES = 400     # ← Nombre de pages (commence avec 50)
+    GET_DETAILS = True  # ← True pour toutes les infos
+    SAVE_EVERY = 10     # ← Sauvegarde toutes les X pages
+    # ===================================
     
-    print(f"🎯 Configuration: {NB_PAGES} pages, détails: {GET_DETAILS}")
+    print(f"🎯 Configuration:")
+    print(f"   Pages: {NB_PAGES}")
+    print(f"   Détails: {GET_DETAILS}")
+    print(f"   Sauvegarde: toutes les {SAVE_EVERY} pages")
     
-    annonces = scraper.scrape_all_pages(max_pages=NB_PAGES, get_details=GET_DETAILS)
+    try:
+        annonces = scraper.scrape_all_pages(
+            max_pages=NB_PAGES, 
+            get_details=GET_DETAILS,
+            save_every=SAVE_EVERY
+        )
+        
+        if annonces:
+            print("\n" + "="*70)
+            print(f"✅ SUCCÈS! {len(annonces)} annonces sauvegardées")
+            print(f"📁 Fichier: {scraper.filename}")
+            
+            df = pd.DataFrame(annonces)
+            print("\n📊 APERÇU DES DONNÉES:")
+            cols = ['marque', 'modele', 'prix', 'annee', 'kilometrage', 'ville', 'transmission', 'carburant']
+            existing_cols = [c for c in cols if c in df.columns]
+            print(df[existing_cols].head(15).to_string())
+            
+            if 'prix' in df.columns:
+                prix_valides = df[df['prix'].notna()]['prix']
+                if len(prix_valides) > 0:
+                    print(f"\n💰 PRIX MOYEN: {prix_valides.mean():,.0f} DH")
+            
+            if 'marque' in df.columns:
+                print(f"\n🏭 TOP MARQUES:")
+                marques_valides = df[df['marque'].notna() & (df['marque'] != 'voiture')]
+                for marque, count in marques_valides['marque'].value_counts().head(10).items():
+                    prix_moyen = df[df['marque'] == marque]['prix'].mean()
+                    print(f"   {marque}: {count} annonces - {prix_moyen:,.0f} DH")
+        
+        else:
+            print("\n❌ Aucune annonce extraite")
     
-    if annonces:
-        df = pd.DataFrame(annonces)
-        
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"espacevoiture_corrige_{timestamp}.csv"
-        df.to_csv(filename, index=False, encoding="utf-8-sig")
-        
-        print("\n" + "="*70)
-        print(f"✅ SUCCÈS! {len(df)} annonces sauvegardées")
-        print(f"📁 Fichier: {filename}")
-        
-        print("\n📊 APERÇU DES DONNÉES CORRIGÉES:")
-        cols = ['marque', 'modele', 'prix', 'annee', 'kilometrage', 'ville', 'transmission', 'carburant']
-        print(df[[c for c in cols if c in df.columns]].head(15).to_string())
-        
-        print(f"\n💰 STATISTIQUES:")
-        if 'prix' in df.columns:
-            print(f"   Prix moyen: {df['prix'].mean():,.0f} DH")
-        
-        if 'marque' in df.columns:
-            print(f"\n🏭 TOP MARQUES:")
-            marques_valides = df[df['marque'].notna() & (df['marque'] != 'voiture')]
-            for marque, count in marques_valides['marque'].value_counts().head(10).items():
-                prix_moyen = df[df['marque'] == marque]['prix'].mean()
-                print(f"   {marque}: {count} annonces - Prix moyen: {prix_moyen:,.0f} DH")
-        
-    else:
-        print("\n❌ Aucune annonce extraite")
+    except KeyboardInterrupt:
+        print("\n\n🛑 ARRÊT DEMANDÉ")
+        print(f"💾 Sauvegarde des {len(scraper.toutes_annonces)} annonces...")
+        scraper.save_checkpoint()
+        print(f"✅ Données sauvegardées dans {scraper.filename}")
 
 print("\n🏁 Scraping terminé")
