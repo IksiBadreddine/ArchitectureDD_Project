@@ -9,6 +9,7 @@ dependencies = [
     "fake-useragent>=2.2.0",
     "loguru>=0.7.3",
     "lxml>=6.1.0",
+    "minio>=7.2.20",
     "numpy>=2.4.4",
     "pandas>=3.0.2",
     "pyarrow>=24.0.0",
