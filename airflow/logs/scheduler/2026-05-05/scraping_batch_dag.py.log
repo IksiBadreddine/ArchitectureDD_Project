@@ -1,0 +1,284 @@
+[2026-05-05T19:18:20.118+0000] {processor.py:161} INFO - Started process (PID=33) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:18:20.120+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:18:20.125+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:20.124+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:18:20.199+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:18:20.745+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:20.744+0000] {override.py:1769} INFO - Created Permission View: can read on DAG:espacevoiture_batch_scraping
+[2026-05-05T19:18:20.761+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:20.761+0000] {override.py:1769} INFO - Created Permission View: can delete on DAG:espacevoiture_batch_scraping
+[2026-05-05T19:18:20.772+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:20.772+0000] {override.py:1769} INFO - Created Permission View: can edit on DAG:espacevoiture_batch_scraping
+[2026-05-05T19:18:20.774+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:20.773+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:18:20.791+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:20.790+0000] {dag.py:3058} INFO - Creating ORM DAG for espacevoiture_batch_scraping
+[2026-05-05T19:18:20.811+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:20.811+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:18:20.846+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.735 seconds
+[2026-05-05T19:18:51.150+0000] {processor.py:161} INFO - Started process (PID=34) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:18:51.153+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:18:51.156+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:51.156+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:18:51.199+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:18:51.240+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:51.239+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:18:51.276+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:18:51.275+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:18:51.308+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.164 seconds
+[2026-05-05T19:19:21.475+0000] {processor.py:161} INFO - Started process (PID=35) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:19:21.477+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:19:21.480+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:19:21.479+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:19:21.517+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:19:21.558+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:19:21.557+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:19:21.594+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:19:21.594+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:19:21.626+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.158 seconds
+[2026-05-05T19:19:51.982+0000] {processor.py:161} INFO - Started process (PID=36) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:19:51.985+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:19:51.989+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:19:51.988+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:19:52.039+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:19:52.075+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:19:52.075+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:19:52.110+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:19:52.109+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:19:52.138+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.163 seconds
+[2026-05-05T19:20:22.325+0000] {processor.py:161} INFO - Started process (PID=37) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:20:22.327+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:20:22.331+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:20:22.330+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:20:22.380+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:20:22.428+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:20:22.428+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:20:22.463+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:20:22.463+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:20:22.501+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.181 seconds
+[2026-05-05T19:20:52.799+0000] {processor.py:161} INFO - Started process (PID=38) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:20:52.801+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:20:52.805+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:20:52.804+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:20:52.847+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:20:52.899+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:20:52.899+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:20:52.934+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:20:52.933+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:20:52.961+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.167 seconds
+[2026-05-05T19:21:23.188+0000] {processor.py:161} INFO - Started process (PID=39) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:21:23.193+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:21:23.198+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:21:23.197+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:21:23.251+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:21:23.295+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:21:23.294+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:21:23.344+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:21:23.344+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:21:23.379+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.202 seconds
+[2026-05-05T19:21:53.646+0000] {processor.py:161} INFO - Started process (PID=40) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:21:53.649+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:21:53.654+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:21:53.653+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:21:53.711+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:21:53.748+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:21:53.748+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:21:53.786+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:21:53.786+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:21:53.830+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.194 seconds
+[2026-05-05T19:22:24.053+0000] {processor.py:161} INFO - Started process (PID=41) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:22:24.055+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:22:24.060+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:22:24.059+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:22:24.100+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:22:24.145+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:22:24.144+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:22:24.181+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:22:24.181+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:22:24.212+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.166 seconds
+[2026-05-05T19:22:54.502+0000] {processor.py:161} INFO - Started process (PID=42) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:22:54.504+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:22:54.508+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:22:54.507+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:22:54.562+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:22:54.602+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:22:54.602+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:22:54.666+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:22:54.666+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:22:54.702+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.209 seconds
+[2026-05-05T19:23:24.933+0000] {processor.py:161} INFO - Started process (PID=43) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:23:24.936+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:23:24.939+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:23:24.939+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:23:24.998+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:23:25.039+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:23:25.039+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:23:25.077+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:23:25.077+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:23:25.108+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.182 seconds
+[2026-05-05T19:23:55.361+0000] {processor.py:161} INFO - Started process (PID=44) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:23:55.364+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:23:55.367+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:23:55.367+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:23:55.415+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:23:55.473+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:23:55.473+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:23:55.504+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:23:55.504+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:23:55.534+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.178 seconds
+[2026-05-05T19:24:25.800+0000] {processor.py:161} INFO - Started process (PID=45) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:24:25.802+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:24:25.807+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:24:25.806+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:24:25.864+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:24:25.905+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:24:25.904+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:24:25.969+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:24:25.968+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:24:26.009+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.219 seconds
+[2026-05-05T19:24:56.204+0000] {processor.py:161} INFO - Started process (PID=46) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:24:56.208+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:24:56.212+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:24:56.212+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:24:56.279+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:24:56.319+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:24:56.319+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:24:56.361+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:24:56.361+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:24:56.404+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.212 seconds
+[2026-05-05T19:25:26.674+0000] {processor.py:161} INFO - Started process (PID=47) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:25:26.676+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:25:26.679+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:25:26.678+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:25:26.720+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:25:26.758+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:25:26.757+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:25:26.787+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:25:26.787+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:25:26.813+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.145 seconds
+[2026-05-05T19:25:57.080+0000] {processor.py:161} INFO - Started process (PID=48) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:25:57.082+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:25:57.086+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:25:57.086+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:25:57.124+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:25:57.159+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:25:57.158+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:25:57.188+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:25:57.187+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:25:57.217+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.143 seconds
+[2026-05-05T19:26:27.515+0000] {processor.py:161} INFO - Started process (PID=49) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:26:27.518+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:26:27.522+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:26:27.521+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:26:27.580+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:26:27.618+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:26:27.618+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:26:27.649+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:26:27.649+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:26:27.687+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.177 seconds
+[2026-05-05T19:26:57.889+0000] {processor.py:161} INFO - Started process (PID=50) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:26:57.891+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:26:57.894+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:26:57.894+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:26:57.935+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:26:57.976+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:26:57.976+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:26:58.007+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:26:58.007+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:26:58.039+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.156 seconds
+[2026-05-05T19:27:28.318+0000] {processor.py:161} INFO - Started process (PID=51) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:27:28.323+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:27:28.328+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:27:28.328+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:27:28.368+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:27:28.411+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:27:28.411+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:27:28.473+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:27:28.472+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:27:28.523+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.211 seconds
+[2026-05-05T19:27:58.680+0000] {processor.py:161} INFO - Started process (PID=52) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:27:58.682+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:27:58.685+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:27:58.685+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:27:58.734+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:27:58.787+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:27:58.786+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:27:58.831+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:27:58.831+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:27:58.869+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.195 seconds
+[2026-05-05T19:28:29.265+0000] {processor.py:161} INFO - Started process (PID=53) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:28:29.267+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:28:29.271+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:28:29.270+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:28:29.305+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:28:29.337+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:28:29.337+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:28:29.367+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:28:29.367+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:28:29.394+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.133 seconds
+[2026-05-05T19:28:59.655+0000] {processor.py:161} INFO - Started process (PID=54) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:28:59.659+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:28:59.665+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:28:59.665+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:28:59.724+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:28:59.764+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:28:59.763+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:28:59.804+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:28:59.804+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:28:59.834+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.191 seconds
+[2026-05-05T19:29:30.063+0000] {processor.py:161} INFO - Started process (PID=55) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:29:30.066+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:29:30.069+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:29:30.069+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:29:30.102+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:29:30.145+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:29:30.145+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:29:30.174+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:29:30.173+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:29:30.205+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.149 seconds
+[2026-05-05T19:30:00.533+0000] {processor.py:161} INFO - Started process (PID=56) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:30:00.535+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:30:00.539+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:30:00.539+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:30:00.590+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:30:00.630+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:30:00.630+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:30:00.662+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:30:00.662+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:30:00.702+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.174 seconds
+[2026-05-05T19:30:30.883+0000] {processor.py:161} INFO - Started process (PID=57) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:30:30.885+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:30:30.888+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:30:30.888+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:30:30.923+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:30:30.966+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:30:30.966+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:30:30.996+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:30:30.995+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:30:31.022+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.143 seconds
+[2026-05-05T19:31:01.323+0000] {processor.py:161} INFO - Started process (PID=58) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:31:01.325+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:31:01.328+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:31:01.328+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:31:01.384+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:31:01.443+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:31:01.442+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:31:01.495+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:31:01.494+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:31:01.537+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.219 seconds
+[2026-05-05T19:33:18.710+0000] {processor.py:161} INFO - Started process (PID=59) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:33:18.714+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:33:18.719+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:33:18.718+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:33:18.761+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:33:18.829+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:33:18.828+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:33:18.879+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:33:18.879+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:33:18.915+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.214 seconds
+[2026-05-05T19:38:04.641+0000] {processor.py:161} INFO - Started process (PID=60) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:38:04.666+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:38:04.811+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:38:04.804+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:38:04.961+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:38:05.037+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:38:05.036+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:38:05.119+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:38:05.119+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:38:05.210+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.857 seconds
+[2026-05-05T19:38:35.581+0000] {processor.py:161} INFO - Started process (PID=61) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:38:35.584+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:38:35.588+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:38:35.587+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:38:35.651+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:38:35.696+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:38:35.696+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:38:35.747+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:38:35.747+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:38:35.786+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.212 seconds
+[2026-05-05T19:39:05.950+0000] {processor.py:161} INFO - Started process (PID=62) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:39:05.952+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:39:05.956+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:39:05.955+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:39:05.995+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:39:06.050+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:39:06.050+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:39:06.085+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:39:06.085+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:39:06.119+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.174 seconds
+[2026-05-05T19:39:36.486+0000] {processor.py:161} INFO - Started process (PID=63) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:39:36.489+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:39:36.494+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:39:36.494+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:39:36.549+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:39:36.587+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:39:36.586+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:39:36.620+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:39:36.620+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:39:36.652+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.172 seconds
+[2026-05-05T19:40:06.851+0000] {processor.py:161} INFO - Started process (PID=64) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:40:06.854+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:40:06.858+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:40:06.858+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:40:06.918+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:40:06.960+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:40:06.960+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:40:06.995+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:40:06.995+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:40:07.034+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.191 seconds
+[2026-05-05T19:40:37.317+0000] {processor.py:161} INFO - Started process (PID=65) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:40:37.320+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:40:37.325+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:40:37.324+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:40:37.396+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:40:37.436+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:40:37.435+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:40:37.469+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:40:37.469+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:40:37.505+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.195 seconds
+[2026-05-05T19:41:07.683+0000] {processor.py:161} INFO - Started process (PID=66) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:41:07.685+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:41:07.689+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:41:07.688+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:41:07.728+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:41:07.783+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:41:07.782+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:41:07.820+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:41:07.820+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 18:00:00+00:00, run_after=2026-05-05 19:00:00+00:00
+[2026-05-05T19:41:07.852+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.174 seconds
+[2026-05-05T19:41:38.180+0000] {processor.py:161} INFO - Started process (PID=71) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:41:38.182+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:41:38.186+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:41:38.185+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:41:38.241+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:41:38.284+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:41:38.284+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:41:38.327+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:41:38.327+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 19:00:00+00:00, run_after=2026-05-05 20:00:00+00:00
+[2026-05-05T19:41:38.371+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.195 seconds
+[2026-05-05T19:42:08.470+0000] {processor.py:161} INFO - Started process (PID=72) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:42:08.472+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:42:08.478+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:42:08.476+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:42:08.521+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:42:08.563+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:42:08.563+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:42:08.600+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:42:08.600+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 19:00:00+00:00, run_after=2026-05-05 20:00:00+00:00
+[2026-05-05T19:42:08.634+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.171 seconds
+[2026-05-05T19:42:38.745+0000] {processor.py:161} INFO - Started process (PID=73) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:42:38.747+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:42:38.755+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:42:38.753+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:42:38.797+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:42:38.848+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:42:38.848+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:42:38.892+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:42:38.891+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 19:00:00+00:00, run_after=2026-05-05 20:00:00+00:00
+[2026-05-05T19:42:38.927+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.189 seconds
+[2026-05-05T19:43:09.289+0000] {processor.py:161} INFO - Started process (PID=74) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:43:09.291+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:43:09.295+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:43:09.294+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:43:09.328+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:43:09.370+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:43:09.369+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:43:09.402+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:43:09.402+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 19:00:00+00:00, run_after=2026-05-05 20:00:00+00:00
+[2026-05-05T19:43:09.433+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.149 seconds
+[2026-05-05T19:43:39.645+0000] {processor.py:161} INFO - Started process (PID=75) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:43:39.648+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:43:39.657+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:43:39.656+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:43:39.726+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:43:39.786+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:43:39.785+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:43:39.843+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:43:39.842+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 19:00:00+00:00, run_after=2026-05-05 20:00:00+00:00
+[2026-05-05T19:43:39.902+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.268 seconds
+[2026-05-05T19:44:10.042+0000] {processor.py:161} INFO - Started process (PID=76) to work on /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:44:10.044+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/scraping_batch_dag.py for tasks to queue
+[2026-05-05T19:44:10.049+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:44:10.048+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:44:10.104+0000] {processor.py:840} INFO - DAG(s) 'espacevoiture_batch_scraping' retrieved from /opt/airflow/dags/scraping_batch_dag.py
+[2026-05-05T19:44:10.168+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:44:10.167+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-05-05T19:44:10.210+0000] {logging_mixin.py:188} INFO - [2026-05-05T19:44:10.210+0000] {dag.py:3823} INFO - Setting next_dagrun for espacevoiture_batch_scraping to 2026-05-05 19:00:00+00:00, run_after=2026-05-05 20:00:00+00:00
+[2026-05-05T19:44:10.235+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/scraping_batch_dag.py took 0.200 seconds

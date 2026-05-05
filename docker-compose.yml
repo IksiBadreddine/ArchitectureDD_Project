@@ -1,7 +1,12 @@
+version: '3.8'
+
 services:
+  # ============================================
+  # MINIO - Data Lake
+  # ============================================
   minio:
     image: minio/minio:latest
-    container_name: minio_auto_project
+    container_name: minio_auto
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -11,4 +16,182 @@ services:
     command: server /data --console-address ":9001"
     volumes:
       - ./minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     restart: unless-stopped
+    networks:
+      - airflow_network
+
+  # ============================================
+  # POSTGRESQL - Base de données Airflow
+  # ============================================
+  postgres:
+    image: postgres:13
+    container_name: airflow_postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - airflow_network
+
+  # ============================================
+  # REDIS - Queue pour Celery
+  # ============================================
+  redis:
+    image: redis:7
+    container_name: airflow_redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - airflow_network
+
+  # ============================================
+  # AIRFLOW - INITIALISATION (s'exécute une seule fois)
+  # ============================================
+  airflow-init:
+    image: apache/airflow:2.8.1
+    container_name: airflow_init
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./ingestion:/opt/airflow/ingestion
+      - ./scraper:/opt/airflow/scraper
+      - ./:/opt/airflow/project
+    entrypoint: /bin/bash
+    command: >
+      -c "
+        echo 'Initialisation de la base de données...' &&
+        airflow db init &&
+        echo 'Création de l utilisateur admin...' &&
+        airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com &&
+        echo '✅ Initialisation terminée avec succès!'
+      "
+    restart: "no"
+    networks:
+      - airflow_network
+
+  # ============================================
+  # AIRFLOW - WEBSERVER
+  # ============================================
+  airflow-webserver:
+    image: apache/airflow:2.8.1
+    container_name: airflow_webserver
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./ingestion:/opt/airflow/ingestion
+      - ./scraper:/opt/airflow/scraper
+      - ./:/opt/airflow/project
+    ports:
+      - "8080:8080"
+    command: webserver
+    restart: unless-stopped
+    networks:
+      - airflow_network
+
+  # ============================================
+  # AIRFLOW - SCHEDULER
+  # ============================================
+  airflow-scheduler:
+    image: apache/airflow:2.8.1
+    container_name: airflow_scheduler
+    depends_on:
+      - postgres
+      - redis
+      - airflow-webserver
+      - airflow-init
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./ingestion:/opt/airflow/ingestion
+      - ./scraper:/opt/airflow/scraper
+      - ./:/opt/airflow/project
+    command: scheduler
+    restart: unless-stopped
+    networks:
+      - airflow_network
+
+  # ============================================
+  # AIRFLOW - WORKER
+  # ============================================
+  airflow-worker:
+    image: apache/airflow:2.8.1
+    container_name: airflow_worker
+    depends_on:
+      - postgres
+      - redis
+      - airflow-scheduler
+      - airflow-init
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./ingestion:/opt/airflow/ingestion
+      - ./scraper:/opt/airflow/scraper
+      - ./:/opt/airflow/project
+    command: celery worker
+    restart: unless-stopped
+    networks:
+      - airflow_network
+
+volumes:
+  postgres_data:
+
+networks:
+  airflow_network:
+    driver: bridge

@@ -1,0 +1,17 @@
+[2026-05-05T19:42:07.370+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.check_minio manual__2026-05-05T19:41:29.108756+00:00 [queued]>
+[2026-05-05T19:42:07.392+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.check_minio manual__2026-05-05T19:41:29.108756+00:00 [queued]>
+[2026-05-05T19:42:07.394+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-05T19:42:07.417+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): check_minio> on 2026-05-05 19:41:29.108756+00:00
+[2026-05-05T19:42:07.425+0000] {standard_task_runner.py:60} INFO - Started process 123 to run task
+[2026-05-05T19:42:07.429+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'espacevoiture_batch_scraping', 'check_minio', 'manual__2026-05-05T19:41:29.108756+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/scraping_batch_dag.py', '--cfg-path', '/tmp/tmp8dj8l082']
+[2026-05-05T19:42:07.432+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask check_minio
+[2026-05-05T19:42:07.526+0000] {task_command.py:423} INFO - Running <TaskInstance: espacevoiture_batch_scraping.check_minio manual__2026-05-05T19:41:29.108756+00:00 [running]> on host da4f76d74d27
+[2026-05-05T19:42:07.665+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_team' AIRFLOW_CTX_DAG_ID='espacevoiture_batch_scraping' AIRFLOW_CTX_TASK_ID='check_minio' AIRFLOW_CTX_EXECUTION_DATE='2026-05-05T19:41:29.108756+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-05T19:41:29.108756+00:00'
+[2026-05-05T19:42:07.671+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-05T19:42:07.676+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'curl -s http://minio:9000/minio/health/live && echo "MinIO OK" || echo "MinIO KO"']
+[2026-05-05T19:42:07.700+0000] {subprocess.py:86} INFO - Output:
+[2026-05-05T19:42:07.730+0000] {subprocess.py:93} INFO - MinIO OK
+[2026-05-05T19:42:07.737+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-05T19:42:07.806+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=espacevoiture_batch_scraping, task_id=check_minio, execution_date=20260505T194129, start_date=20260505T194207, end_date=20260505T194207
+[2026-05-05T19:42:07.897+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-05T19:42:07.932+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
