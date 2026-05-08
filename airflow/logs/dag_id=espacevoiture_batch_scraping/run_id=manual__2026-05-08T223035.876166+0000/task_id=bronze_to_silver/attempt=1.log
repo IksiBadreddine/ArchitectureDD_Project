@@ -1,0 +1,51 @@
+[2026-05-08T22:30:47.987+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.bronze_to_silver manual__2026-05-08T22:30:35.876166+00:00 [queued]>
+[2026-05-08T22:30:48.001+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.bronze_to_silver manual__2026-05-08T22:30:35.876166+00:00 [queued]>
+[2026-05-08T22:30:48.002+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-08T22:30:48.022+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): bronze_to_silver> on 2026-05-08 22:30:35.876166+00:00
+[2026-05-08T22:30:48.028+0000] {standard_task_runner.py:60} INFO - Started process 264 to run task
+[2026-05-08T22:30:48.035+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'espacevoiture_batch_scraping', 'bronze_to_silver', 'manual__2026-05-08T22:30:35.876166+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/scraping_batch_dag.py', '--cfg-path', '/tmp/tmpzkrl94v8']
+[2026-05-08T22:30:48.037+0000] {standard_task_runner.py:88} INFO - Job 12: Subtask bronze_to_silver
+[2026-05-08T22:30:48.105+0000] {task_command.py:423} INFO - Running <TaskInstance: espacevoiture_batch_scraping.bronze_to_silver manual__2026-05-08T22:30:35.876166+00:00 [running]> on host e8c433c3338d
+[2026-05-08T22:30:48.190+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_team' AIRFLOW_CTX_DAG_ID='espacevoiture_batch_scraping' AIRFLOW_CTX_TASK_ID='bronze_to_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-05-08T22:30:35.876166+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-08T22:30:35.876166+00:00'
+[2026-05-08T22:30:48.192+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-08T22:30:48.193+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    cd /opt/***/project &&     pip install --quiet pandas pyarrow &&     python etl/bronze_to_silver_v2.py\n    ']
+[2026-05-08T22:30:48.202+0000] {subprocess.py:86} INFO - Output:
+[2026-05-08T22:30:50.854+0000] {subprocess.py:93} INFO - 
+[2026-05-08T22:30:50.854+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[2026-05-08T22:30:50.855+0000] {subprocess.py:93} INFO - [notice] To update, run: python -m pip install --upgrade pip
+[2026-05-08T22:30:51.755+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-08T22:30:51.756+0000] {subprocess.py:93} INFO - 🔄 ETL: BRONZE → SILVER
+[2026-05-08T22:30:51.756+0000] {subprocess.py:93} INFO - 📊 Nettoyage des nouvelles annonces + fusion avec l'existant
+[2026-05-08T22:30:51.757+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-08T22:30:51.757+0000] {subprocess.py:93} INFO - 
+[2026-05-08T22:30:51.757+0000] {subprocess.py:93} INFO - 📥 Recherche du dernier fichier Bronze (batch)...
+[2026-05-08T22:30:51.758+0000] {subprocess.py:93} INFO - ⚠️ Aucun fichier Bronze trouvé, recherche d'autres fichiers...
+[2026-05-08T22:30:51.758+0000] {subprocess.py:93} INFO -    ✅ Fichier Bronze: espacevoiture_final_20260504_233047.csv (7.4 KB)
+[2026-05-08T22:30:51.758+0000] {subprocess.py:93} INFO -    → 49 nouvelles annonces brutes
+[2026-05-08T22:30:51.759+0000] {subprocess.py:93} INFO - 
+[2026-05-08T22:30:51.759+0000] {subprocess.py:93} INFO - 📥 Chargement du Silver existant...
+[2026-05-08T22:30:51.759+0000] {subprocess.py:93} INFO -    ✅ Fichier Silver existant: data/silver/silver_voitures_20260504_015638.parquet
+[2026-05-08T22:30:51.759+0000] {subprocess.py:93} INFO -    → 3114 annonces existantes
+[2026-05-08T22:30:51.760+0000] {subprocess.py:93} INFO - 
+[2026-05-08T22:30:51.760+0000] {subprocess.py:93} INFO - 🧹 Nettoyage des nouvelles annonces...
+[2026-05-08T22:30:51.760+0000] {subprocess.py:93} INFO -    → 49 annonces après nettoyage
+[2026-05-08T22:30:51.761+0000] {subprocess.py:93} INFO - 
+[2026-05-08T22:30:51.761+0000] {subprocess.py:93} INFO - 🔀 Fusion avec les données existantes...
+[2026-05-08T22:30:51.761+0000] {subprocess.py:93} INFO -    → Silver existant: 3114
+[2026-05-08T22:30:51.761+0000] {subprocess.py:93} INFO -    → Nouvelles annonces: 49
+[2026-05-08T22:30:51.762+0000] {subprocess.py:93} INFO -    → Total après fusion: 3126
+[2026-05-08T22:30:51.762+0000] {subprocess.py:93} INFO - 
+[2026-05-08T22:30:51.762+0000] {subprocess.py:93} INFO - 💾 Sauvegarde du nouveau Silver...
+[2026-05-08T22:30:51.763+0000] {subprocess.py:93} INFO -    ✅ Fichier sauvegardé: data/silver/silver_voitures_20260508_223051.parquet
+[2026-05-08T22:30:51.763+0000] {subprocess.py:93} INFO -    📊 3126 annonces dans le Silver
+[2026-05-08T22:30:51.763+0000] {subprocess.py:93} INFO -    📦 Taille: 141.5 KB
+[2026-05-08T22:30:51.763+0000] {subprocess.py:93} INFO -    ✅ Copie: silver_voitures_20260508_223051.parquet
+[2026-05-08T22:30:51.764+0000] {subprocess.py:93} INFO -    🗑️ Fichier Bronze supprimé: espacevoiture_final_20260504_233047.csv
+[2026-05-08T22:30:51.764+0000] {subprocess.py:93} INFO - 
+[2026-05-08T22:30:51.764+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-08T22:30:51.765+0000] {subprocess.py:93} INFO - ✅ ETL Bronze → Silver terminé avec succès!
+[2026-05-08T22:30:51.766+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-08T22:30:51.811+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-08T22:30:51.839+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=espacevoiture_batch_scraping, task_id=bronze_to_silver, execution_date=20260508T223035, start_date=20260508T223047, end_date=20260508T223051
+[2026-05-08T22:30:51.866+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-08T22:30:51.886+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -18,8 +18,8 @@ print("="*70)
 # ==================== CONFIGURATION ====================
 # Connexion au Data Warehouse
 DW_CONN = {
-    'host': 'localhost',
-    'port': 5433,
+    'host': 'postgres-dw',  # ← Nom du service dans docker-compose (pas localhost!)
+    'port': 5432,
     'database': 'gold_auto_market',
     'user': 'gold_user',
     'password': 'gold_password'
