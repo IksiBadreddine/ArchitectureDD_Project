@@ -189,8 +189,33 @@ services:
     networks:
       - airflow_network
 
+  # ============================================
+  # POSTGRESQL - DATA WAREHOUSE (Gold Layer)
+  # ============================================
+  postgres-dw:
+    image: postgres:15
+    container_name: postgres_dw
+    environment:
+      POSTGRES_USER: gold_user
+      POSTGRES_PASSWORD: gold_password
+      POSTGRES_DB: gold_auto_market
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_dw_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "gold_user", "-d", "gold_auto_market"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - airflow_network
+
 volumes:
   postgres_data:
+  postgres_dw_data:
 
 networks:
   airflow_network:
