@@ -213,6 +213,30 @@ services:
     networks:
       - airflow_network
 
+
+  # ============================================
+  # METABASE - VISUALISATION (Dashboards)
+  # ============================================
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: gold_auto_market
+      MB_DB_HOST: postgres-dw
+      MB_DB_PORT: 5432
+      MB_DB_USER: gold_user
+      MB_DB_PASS: gold_password
+    depends_on:
+      postgres-dw:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - airflow_network
+
+      
 volumes:
   postgres_data:
   postgres_dw_data:

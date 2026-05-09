@@ -1,0 +1,35 @@
+[2026-05-08T23:05:22.331+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.bronze_to_silver scheduled__2026-05-08T22:00:00+00:00 [queued]>
+[2026-05-08T23:05:22.343+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.bronze_to_silver scheduled__2026-05-08T22:00:00+00:00 [queued]>
+[2026-05-08T23:05:22.343+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2026-05-08T23:05:22.357+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): bronze_to_silver> on 2026-05-08 22:00:00+00:00
+[2026-05-08T23:05:22.363+0000] {standard_task_runner.py:60} INFO - Started process 114 to run task
+[2026-05-08T23:05:22.367+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'espacevoiture_batch_scraping', 'bronze_to_silver', 'scheduled__2026-05-08T22:00:00+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/scraping_batch_dag.py', '--cfg-path', '/tmp/tmpja9t6fdh']
+[2026-05-08T23:05:22.369+0000] {standard_task_runner.py:88} INFO - Job 26: Subtask bronze_to_silver
+[2026-05-08T23:05:22.448+0000] {task_command.py:423} INFO - Running <TaskInstance: espacevoiture_batch_scraping.bronze_to_silver scheduled__2026-05-08T22:00:00+00:00 [running]> on host ad5361f2efb8
+[2026-05-08T23:05:22.524+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_team' AIRFLOW_CTX_DAG_ID='espacevoiture_batch_scraping' AIRFLOW_CTX_TASK_ID='bronze_to_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-05-08T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-08T22:00:00+00:00'
+[2026-05-08T23:05:22.525+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-08T23:05:22.527+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    cd /opt/***/project &&     pip install --quiet pandas pyarrow &&     python etl/bronze_to_silver_v2.py\n    ']
+[2026-05-08T23:05:22.537+0000] {subprocess.py:86} INFO - Output:
+[2026-05-08T23:05:25.073+0000] {subprocess.py:93} INFO - 
+[2026-05-08T23:05:25.074+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[2026-05-08T23:05:25.074+0000] {subprocess.py:93} INFO - [notice] To update, run: python -m pip install --upgrade pip
+[2026-05-08T23:05:25.642+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-08T23:05:25.643+0000] {subprocess.py:93} INFO - 🔄 ETL: BRONZE → SILVER
+[2026-05-08T23:05:25.643+0000] {subprocess.py:93} INFO - 📊 Nettoyage des nouvelles annonces + fusion avec l'existant
+[2026-05-08T23:05:25.644+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-08T23:05:25.644+0000] {subprocess.py:93} INFO - 
+[2026-05-08T23:05:25.645+0000] {subprocess.py:93} INFO - 📥 Recherche du dernier fichier Bronze (batch)...
+[2026-05-08T23:05:25.645+0000] {subprocess.py:93} INFO - ⚠️ Aucun fichier Bronze trouvé, recherche d'autres fichiers...
+[2026-05-08T23:05:25.645+0000] {subprocess.py:93} INFO - ❌ Aucun fichier Bronze trouvé!
+[2026-05-08T23:05:25.695+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-08T23:05:25.706+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-08T23:05:25.709+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=espacevoiture_batch_scraping, task_id=bronze_to_silver, execution_date=20260508T220000, start_date=20260508T230522, end_date=20260508T230525
+[2026-05-08T23:05:25.725+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 26 for task bronze_to_silver (Bash command failed. The command returned a non-zero exit code 1.; 114)
+[2026-05-08T23:05:25.757+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-08T23:05:25.779+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
