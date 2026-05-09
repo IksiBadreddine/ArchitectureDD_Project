@@ -16,7 +16,7 @@ print("💾 Sauvegarde: Parquet + CSV")
 print("="*70)
 
 # ==================== CONFIGURATION ====================
-INPUT_FILE = "espacevoiture_final_20260503_211549.csv"  
+INPUT_FILE = "data/bronze/espacevoiture_final_20260503_211549.csv"  
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 OUTPUT_PARQUET = f"silver_voitures_{timestamp}.parquet"
 OUTPUT_CSV = f"silver_voitures_{timestamp}.csv"

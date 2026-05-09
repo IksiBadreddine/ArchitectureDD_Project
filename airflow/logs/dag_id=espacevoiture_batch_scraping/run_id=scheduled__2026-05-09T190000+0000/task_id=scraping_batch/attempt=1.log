@@ -1,0 +1,83 @@
+[2026-05-09T20:12:24.491+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.scraping_batch scheduled__2026-05-09T19:00:00+00:00 [queued]>
+[2026-05-09T20:12:24.542+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: espacevoiture_batch_scraping.scraping_batch scheduled__2026-05-09T19:00:00+00:00 [queued]>
+[2026-05-09T20:12:24.554+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-09T20:12:24.595+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): scraping_batch> on 2026-05-09 19:00:00+00:00
+[2026-05-09T20:12:24.608+0000] {standard_task_runner.py:60} INFO - Started process 152 to run task
+[2026-05-09T20:12:24.618+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'espacevoiture_batch_scraping', 'scraping_batch', 'scheduled__2026-05-09T19:00:00+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/scraping_batch_dag.py', '--cfg-path', '/tmp/tmponwxfc9e']
+[2026-05-09T20:12:24.636+0000] {standard_task_runner.py:88} INFO - Job 35: Subtask scraping_batch
+[2026-05-09T20:12:24.809+0000] {task_command.py:423} INFO - Running <TaskInstance: espacevoiture_batch_scraping.scraping_batch scheduled__2026-05-09T19:00:00+00:00 [running]> on host ad5361f2efb8
+[2026-05-09T20:12:25.025+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_team' AIRFLOW_CTX_DAG_ID='espacevoiture_batch_scraping' AIRFLOW_CTX_TASK_ID='scraping_batch' AIRFLOW_CTX_EXECUTION_DATE='2026-05-09T19:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-09T19:00:00+00:00'
+[2026-05-09T20:12:25.035+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-09T20:12:25.038+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n    cd /opt/***/project &&     pip install --quiet requests beautifulsoup4 pandas minio &&     python ingestion/batch_ingestion.py\n    ']
+[2026-05-09T20:12:25.066+0000] {subprocess.py:86} INFO - Output:
+[2026-05-09T20:12:36.679+0000] {subprocess.py:93} INFO - 
+[2026-05-09T20:12:36.680+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[2026-05-09T20:12:36.681+0000] {subprocess.py:93} INFO - [notice] To update, run: python -m pip install --upgrade pip
+[2026-05-09T20:12:46.628+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-09T20:12:46.629+0000] {subprocess.py:93} INFO - 📦 BATCH INGESTION - Version Docker
+[2026-05-09T20:12:46.629+0000] {subprocess.py:93} INFO - 🕐 Date et heure: 2026-05-09 20:12:37
+[2026-05-09T20:12:46.630+0000] {subprocess.py:93} INFO - ======================================================================
+[2026-05-09T20:12:46.631+0000] {subprocess.py:93} INFO - 
+[2026-05-09T20:12:46.631+0000] {subprocess.py:93} INFO - 🚗 Scraping de 5 pages...
+[2026-05-09T20:12:46.632+0000] {subprocess.py:93} INFO - 📄 Page 1
+[2026-05-09T20:12:46.632+0000] {subprocess.py:93} INFO -    ✅ Mercedes-benz Classe cls - 198,000 DH
+[2026-05-09T20:12:46.632+0000] {subprocess.py:93} INFO -    ✅ Audi Q5 - 238,000 DH
+[2026-05-09T20:12:46.633+0000] {subprocess.py:93} INFO -    ✅ Hyundai Tucson - 239,000 DH
+[2026-05-09T20:12:46.633+0000] {subprocess.py:93} INFO -    ✅ Opel Corsa - 165,000 DH
+[2026-05-09T20:12:46.634+0000] {subprocess.py:93} INFO -    ✅ Dacia Logan - 168,000 DH
+[2026-05-09T20:12:46.634+0000] {subprocess.py:93} INFO -    ✅ Volkswagen Touareg - 624,000 DH
+[2026-05-09T20:12:46.635+0000] {subprocess.py:93} INFO -    ✅ Volkswagen Polo - 168,000 DH
+[2026-05-09T20:12:46.635+0000] {subprocess.py:93} INFO -    ✅ Dacia Logan - 117,000 DH
+[2026-05-09T20:12:46.636+0000] {subprocess.py:93} INFO -    ✅ Renault Clio - 108,000 DH
+[2026-05-09T20:12:46.636+0000] {subprocess.py:93} INFO -    ✅ Volkswagen Passat - 268,000 DH
+[2026-05-09T20:12:46.637+0000] {subprocess.py:93} INFO - 📄 Page 2
+[2026-05-09T20:12:46.637+0000] {subprocess.py:93} INFO -    ✅ Peugeot 208 - 183,000 DH
+[2026-05-09T20:12:46.638+0000] {subprocess.py:93} INFO -    ✅ Peugeot 208 - 183,000 DH
+[2026-05-09T20:12:46.642+0000] {subprocess.py:93} INFO -    ✅ Peugeot 208 - 143,000 DH
+[2026-05-09T20:12:46.643+0000] {subprocess.py:93} INFO -    ✅ Peugeot 208 - 148,000 DH
+[2026-05-09T20:12:46.643+0000] {subprocess.py:93} INFO -    ✅ Volkswagen Tiguan - 287,000 DH
+[2026-05-09T20:12:46.644+0000] {subprocess.py:93} INFO -    ✅ Mercedes-benz Classe a - 368,000 DH
+[2026-05-09T20:12:46.644+0000] {subprocess.py:93} INFO -    ✅ Peugeot 3008 - 258,000 DH
+[2026-05-09T20:12:46.645+0000] {subprocess.py:93} INFO -    ✅ Land rover Range rover - 253,000 DH
+[2026-05-09T20:12:46.645+0000] {subprocess.py:93} INFO -    ✅ Volvo Xc60 - 298,000 DH
+[2026-05-09T20:12:46.646+0000] {subprocess.py:93} INFO -    ✅ Mercedes-benz Classe gl - 375,000 DH
+[2026-05-09T20:12:46.646+0000] {subprocess.py:93} INFO - 📄 Page 3
+[2026-05-09T20:12:46.646+0000] {subprocess.py:93} INFO -    ✅ Peugeot 208 - 83,000 DH
+[2026-05-09T20:12:46.647+0000] {subprocess.py:93} INFO -    ✅ Alfa romeo Giullieta - 129,000 DH
+[2026-05-09T20:12:46.647+0000] {subprocess.py:93} INFO -    ✅ KIA Carens - 207,000 DH
+[2026-05-09T20:12:46.648+0000] {subprocess.py:93} INFO -    ✅ Peugeot 508 - 95,000 DH
+[2026-05-09T20:12:46.648+0000] {subprocess.py:93} INFO -    ✅ Hyundai I30 - 115,000 DH
+[2026-05-09T20:12:46.648+0000] {subprocess.py:93} INFO -    ✅ Audi A3 - 180,000 DH
+[2026-05-09T20:12:46.649+0000] {subprocess.py:93} INFO -    ✅ Mercedes-benz 220 - 16,500 DH
+[2026-05-09T20:12:46.649+0000] {subprocess.py:93} INFO -    ✅ Volkswagen Jetta - 175,000 DH
+[2026-05-09T20:12:46.650+0000] {subprocess.py:93} INFO -    ✅ BMW 520 - 210,000 DH
+[2026-05-09T20:12:46.650+0000] {subprocess.py:93} INFO - 📄 Page 4
+[2026-05-09T20:12:46.650+0000] {subprocess.py:93} INFO -    ✅ Volvo S80 - 315,000 DH
+[2026-05-09T20:12:46.651+0000] {subprocess.py:93} INFO -    ✅ Volkswagen Tiguan - 240,000 DH
+[2026-05-09T20:12:46.651+0000] {subprocess.py:93} INFO -    ✅ Peugeot 3008 - 195,000 DH
+[2026-05-09T20:12:46.652+0000] {subprocess.py:93} INFO -    ✅ Hyundai Tucson - 325,000 DH
+[2026-05-09T20:12:46.652+0000] {subprocess.py:93} INFO -    ✅ Alfa romeo Gt - 260,000 DH
+[2026-05-09T20:12:46.652+0000] {subprocess.py:93} INFO -    ✅ BMW X3 - 170,000 DH
+[2026-05-09T20:12:46.653+0000] {subprocess.py:93} INFO -    ✅ Renault Twingo - 58,000 DH
+[2026-05-09T20:12:46.653+0000] {subprocess.py:93} INFO -    ✅ Audi A4 - 100,000 DH
+[2026-05-09T20:12:46.654+0000] {subprocess.py:93} INFO -    ✅ Ford C-max - 125,000 DH
+[2026-05-09T20:12:46.654+0000] {subprocess.py:93} INFO -    ✅ Alfa romeo 145 - 260,000 DH
+[2026-05-09T20:12:46.654+0000] {subprocess.py:93} INFO - 📄 Page 5
+[2026-05-09T20:12:46.655+0000] {subprocess.py:93} INFO -    ✅ Hyundai Accent - 85,000 DH
+[2026-05-09T20:12:46.655+0000] {subprocess.py:93} INFO -    ✅ Peugeot 3008 - 209,000 DH
+[2026-05-09T20:12:46.655+0000] {subprocess.py:93} INFO -    ✅ Toyota Corolla verso - 63,000 DH
+[2026-05-09T20:12:46.656+0000] {subprocess.py:93} INFO -    ✅ Volkswagen Touareg - 155,000 DH
+[2026-05-09T20:12:46.656+0000] {subprocess.py:93} INFO -    ✅ Peugeot 3008 - 215,000 DH
+[2026-05-09T20:12:46.657+0000] {subprocess.py:93} INFO -    ✅ Peugeot 3008 - 150,000 DH
+[2026-05-09T20:12:46.657+0000] {subprocess.py:93} INFO -    ✅ Toyota Rav 4 - 150,000 DH
+[2026-05-09T20:12:46.657+0000] {subprocess.py:93} INFO -    ✅ Fiat Tipo - 93,000 DH
+[2026-05-09T20:12:46.658+0000] {subprocess.py:93} INFO -    ✅ Mercedes-benz Classe gl - 470,000 DH
+[2026-05-09T20:12:46.658+0000] {subprocess.py:93} INFO -    ✅ Peugeot 308 - 175,000 DH
+[2026-05-09T20:12:46.659+0000] {subprocess.py:93} INFO - 
+[2026-05-09T20:12:46.659+0000] {subprocess.py:93} INFO - 📤 Upload: batch/2026/05/09/batch_20260509_201237.csv (49 annonces)
+[2026-05-09T20:12:46.659+0000] {subprocess.py:93} INFO - 
+[2026-05-09T20:12:46.660+0000] {subprocess.py:93} INFO - ✅ Batch ingestion terminée
+[2026-05-09T20:12:46.738+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-09T20:12:46.772+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=espacevoiture_batch_scraping, task_id=scraping_batch, execution_date=20260509T190000, start_date=20260509T201224, end_date=20260509T201246
+[2026-05-09T20:12:46.839+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-09T20:12:46.892+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
